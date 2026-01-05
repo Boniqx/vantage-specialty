@@ -48,7 +48,7 @@ export function PatientsTable({ patients, isLoading }: PatientsTableProps) {
                 {patient.last_name}, {patient.first_name}
               </TableCell>
               <TableCell>{new Date(patient.date_of_birth).toLocaleDateString()}</TableCell>
-              <TableCell className="capitalize">{patient.gender.replace('_', ' ')}</TableCell>
+              <TableCell className="capitalize">{patient.gender?.replace('_', ' ') || 'Unknown'}</TableCell>
               <TableCell>
                  <Badge variant="outline">Active</Badge>
               </TableCell>
